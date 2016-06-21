@@ -11,17 +11,14 @@ var opts = {
 
   canvasBody = document.getElementById("canvas"),
   canvas = canvasBody.getContext("2d"),
-  textBody = document.getElementById("text"),
-  text = textBody.getContext("2d"),
-  w = canvasBody.width = textBody.width = window.innerWidth,
-  h = canvasBody.height = textBody.height = window.innerHeight;
+  w = canvasBody.width = window.innerWidth,
+  h = canvasBody.height = window.innerHeight;
 
 function anim() {
   setTimeout(function() {
     window.requestAnimationFrame(anim)
   }, 1000 / 30 ) //Setting the FPS by dividing the one second by <frames>
-  step_square(),
-  step_text();
+  step_square();
 }
 
 anim() //Calling the animation function
@@ -38,22 +35,7 @@ function step_square() {
   canvas.fillRect(0, 0, w, h)
 }
 
-function step_text() {
-  text.fillStyle = "#FFFFFF";
-  txt_size = w/4;
-  txt_size = txt_size.toString()
-  txt_size = txt_size.concat("px Arial");
-  text.font = txt_size;
-  text.textAlign="center";
-  text.fillText("Soon", w/2, h/1.5);
-  // text.textSmoothingEnabled = true;
-  // text.moztextSmoothingEnabled = true;
-  // text.mstextSmoothingEnabled = true;
-  // text.webkittextSmoothingEnabled = true;
-
-}
-
 window.addEventListener("resize", function(){ //Just in case someone resizes the window
-  w = canvasBody.width = textBody.width = window.innerWidth;
-  h = canvasBody.height = textBody.height = window.innerHeight;
+  w = canvasBody.width = window.innerWidth;
+  h = canvasBody.height = window.innerHeight;
 })

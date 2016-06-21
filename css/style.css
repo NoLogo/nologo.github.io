@@ -3,4 +3,18 @@ canvas {
   top: 0;
   left: 0;
   right: 0;
+  z-index: 1;
+}
+h1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    font-size: 25vw;
+    color: #FFF;
+    font-family: Arial;
+    font-weight: 300;
+    text-align: center;
+    margin-top: 15%;
 }
